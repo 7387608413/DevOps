@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="../monitoring/index.html" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="../alerts/index.html" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="index.html" class="nav-item active">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>Settings</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    SYSTEM CONFIGURATION
+                </div>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your account, workspace and DevGuard preferences.
+                </p>
+
+            </div>
+
+
+            <button
+                id="saveTop"
+                class="save-button">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+
+        <div class="settings-layout">
+
+
+            <!-- SETTINGS NAVIGATION -->
+
+            <aside class="settings-nav">
+
+                <button
+                    class="settings-tab active"
+                    data-section="profile">
+
+                    <span>👤</span>
+
+                    <div>
+                        <strong>Profile</strong>
+                        <small>Personal information</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="workspace">
+
+                    <span>▣</span>
+
+                    <div>
+                        <strong>Workspace</strong>
+                        <small>Project configuration</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="notifications">
+
+                    <span>🔔</span>
+
+                    <div>
+                        <strong>Notifications</strong>
+                        <small>Alert preferences</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="security">
+
+                    <span>🔐</span>
+
+                    <div>
+                        <strong>Security</strong>
+                        <small>Authentication & access</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="integrations">
+
+                    <span>🔗</span>
+
+                    <div>
+                        <strong>Integrations</strong>
+                        <small>Connect external services</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="appearance">
+
+                    <span>◐</span>
+
+                    <div>
+                        <strong>Appearance</strong>
+                        <small>Interface preferences</small>
+                    </div>
+
+                </button>
+
+            </aside>
+
+
+            <!-- SETTINGS CONTENT -->
+
+            <div class="settings-content">
+
+
+                <!-- PROFILE -->
+
+                <section
+                    class="settings-section active"
+                    id="profile">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Profile</h2>
+
+                            <p>
+                                Update your personal information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="profile-header">
+
+                            <div class="large-avatar">
+                                U
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Developer
+                                </h3>
+
+                                <p>
+                                    Developer account
+                                </p>
+
+                                <button class="upload-button">
+                                    Change avatar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="field">
+
+                                <label>
+                                    First Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="Developer"
+                                    id="firstName"
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label>
+                                    Last Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="User"
+                                    id="lastName"
+                                >
+
+                            </div>
+
+
+                            <div class="field full">
+
+                                <label>
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    value="developer@example.com"
+                                    id="email"
+                                >
+
+                            </div>
+
+
+                            <div class="field full">
+
+                                <label>
+                                    Role
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="Developer"
+                                    disabled
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- WORKSPACE -->
+
+                <section
+                    class="settings-section"
+                    id="workspace">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Workspace</h2>
+
+                            <p>
+                                Configure your DevGuard workspace.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="field">
+
+                            <label>
+                                Workspace Name
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Production"
+                                id="workspaceName"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Project Name
+                            </label>
+
+                            <input
+                                type="text"
+                                value="DevGuard Platform"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Default Environment
+                            </label>
+
+                            <select>
+
+                                <option selected>
+                                    Production
+                                </option>
+
+                                <option>
+                                    Staging
+                                </option>
+
+                                <option>
+                                    Development
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="danger-zone">
+
+                            <div>
+
+                                <strong>
+                                    Reset workspace
+                                </strong>
+
+                                <p>
+                                    Remove local workspace preferences.
+                                </p>
+
+                            </div>
+
+                            <button id="resetWorkspace">
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <section
+                    class="settings-section"
+                    id="notifications">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Notifications</h2>
+
+                            <p>
+                                Control how DevGuard sends alerts.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+
+                        <div class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Critical alerts
+                                </strong>
+
+                                <p>
+                                    Always notify me about critical incidents.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Deployment notifications
+                                </strong>
+
+                                <p>
+                                    Notify me when deployments complete.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Risk warnings
+                                </strong>
+
+                                <p>
+                                    Receive warnings for high-risk deployments.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Weekly report
+                                </strong>
+
+                                <p>
+                                    Receive a weekly DevOps summary.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="notification-method">
+
+                            <label>
+                                Notification method
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Email
+                                </option>
+
+                                <option>
+                                    Dashboard
+                                </option>
+
+                                <option>
+                                    Email + Dashboard
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECURITY -->
+
+                <section
+                    class="settings-section"
+                    id="security">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Security</h2>
+
+                            <p>
+                                Manage authentication and account security.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+
+                        <div class="security-item">
+
+                            <div class="security-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Two-factor authentication
+                                </strong>
+
+                                <p>
+                                    Add an extra layer of protection.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="security-button">
+
+                                Enable
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-item">
+
+                            <div class="security-icon blue">
+                                🔑
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Change password
+                                </strong>
+
+                                <p>
+                                    Update your account password.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="security-button">
+
+                                Change
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-item">
+
+                            <div class="security-icon purple">
+                                ◉
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Active sessions
+                                </strong>
+
+                                <p>
+                                    Manage devices signed into your account.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="security-button">
+
+                                Manage
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="danger-zone">
+
+                            <div>
+
+                                <strong>
+                                    Delete account
+                                </strong>
+
+                                <p>
+                                    Permanently remove your DevGuard account.
+                                </p>
+
+                            </div>
+
+                            <button id="deleteAccount">
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INTEGRATIONS -->
+
+                <section
+                    class="settings-section"
+                    id="integrations">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Integrations</h2>
+
+                            <p>
+                                Connect DevGuard with your development tools.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="integration-list">
+
+
+                        <div class="integration">
+
+                            <div class="integration-icon github">
+                                G
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    GitHub
+                                </strong>
+
+                                <p>
+                                    Repository and commit integration.
+                                </p>
+
+                            </div>
+
+                            <span class="connected">
+                                ● Connected
+                            </span>
+
+                            <button>
+                                Configure
+                            </button>
+
+                        </div>
+
+
+                        <div class="integration">
+
+                            <div class="integration-icon docker">
+                                D
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Docker
+                                </strong>
+
+                                <p>
+                                    Container image monitoring.
+                                </p>
+
+                            </div>
+
+                            <span class="not-connected">
+                                ● Not connected
+                            </span>
+
+                            <button>
+                                Connect
+                            </button>
+
+                        </div>
+
+
+                        <div class="integration">
+
+                            <div class="integration-icon cloud">
+                                ☁
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Cloud Provider
+                                </strong>
+
+                                <p>
+                                    Infrastructure monitoring.
+                                </p>
+
+                            </div>
+
+                            <span class="connected">
+                                ● Connected
+                            </span>
+
+                            <button>
+                                Configure
+                            </button>
+
+                        </div>
+
+
+                        <div class="integration">
+
+                            <div class="integration-icon slack">
+                                S
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Slack
+                                </strong>
+
+                                <p>
+                                    Send deployment and alert notifications.
+                                </p>
+
+                            </div>
+
+                            <span class="not-connected">
+                                ● Not connected
+                            </span>
+
+                            <button>
+                                Connect
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- APPEARANCE -->
+
+                <section
+                    class="settings-section"
+                    id="appearance">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>Appearance</h2>
+
+                            <p>
+                                Customize your DevGuard interface.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+
+                        <div class="appearance-title">
+                            Theme
+                        </div>
+
+
+                        <div class="theme-options">
+
+
+                            <button
+                                class="theme-option active"
+                                data-theme="dark">
+
+                                <div class="theme-preview dark-preview">
+
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+
+                                </div>
+
+                                <strong>
+                                    Dark
+                                </strong>
+
+                                <span>
+                                    Recommended
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                class="theme-option"
+                                data-theme="light">
+
+                                <div class="theme-preview light-preview">
+
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+
+                                </div>
+
+                                <strong>
+                                    Light
+                                </strong>
+
+                                <span>
+                                    Classic interface
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="toggle-row compact">
+
+                            <div>
+
+                                <strong>
+                                    Animations
+                                </strong>
+
+                                <p>
+                                    Enable interface animations.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    id="animationsToggle"
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row compact">
+
+                            <div>
+
+                                <strong>
+                                    Compact mode
+                                </strong>
+
+                                <p>
+                                    Reduce spacing throughout the dashboard.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="compactToggle"
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast">
+
+    <span>✓</span>
+
+    <div>
+        <strong>Changes saved</strong>
+        <small>Your settings have been updated.</small>
+    </div>
+
+</div>
+
+
+<script src="settings.js"></script>
+
+</body>
+</html>

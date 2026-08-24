@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                D
+            </div>
+
+            <div>
+                <h2>DevGuard</h2>
+                <span>DEVOPS INTELLIGENCE</span>
+            </div>
+
+        </div>
+
+
+        <div class="workspace">
+
+            <div class="workspace-icon">
+                P
+            </div>
+
+            <div>
+                <strong>Production</strong>
+                <small>Workspace</small>
+            </div>
+
+            <span class="arrow">⌄</span>
+
+        </div>
+
+
+        <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="index.html" class="nav-item active">
+        <span>⌂</span>
+        Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+        <span>▣</span>
+        Projects
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+        <span>🚀</span>
+        Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+        <span>◉</span>
+        Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+        <span>⚡</span>
+        CI/CD Pipeline
+        </a>
+
+        <a href="../monitoring/index.html" class="nav-item">
+        <span>◌</span>
+        Monitoring
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+        <span>◷</span>
+        Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="../alerts/index.html" class="nav-item">
+        <span>🔔</span>
+        Alerts
+        <b>3</b>
+        </a>
+
+        <a href="../settings/index.html" class="nav-item">
+        <span>⚙</span>
+        Settings
+        </a>
+
+</nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+
+                <span class="online-dot"></span>
+
+                <div>
+                    <strong>All systems operational</strong>
+                    <small>Last checked just now</small>
+                </div>
+
+            </div>
+
+
+            <div class="user">
+
+                <div class="avatar">
+                    U
+                </div>
+
+                <div>
+                    <strong>User</strong>
+                    <small>Developer</small>
+                </div>
+
+                <span>•••</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main">
+
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div>
+
+                <button class="mobile-menu" id="menuButton">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    Overview
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                    >
+
+                    <kbd>⌘ K</kbd>
+
+                </div>
+
+
+                <button class="icon-button">
+                    🔔
+                    <i></i>
+                </button>
+
+
+                <div class="top-avatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard Content -->
+        <section class="content">
+
+
+            <!-- Greeting -->
+            <div class="welcome">
+
+                <div>
+
+                    <h1>
+                        Good morning, User
+                        <span>👋</span>
+                    </h1>
+
+                    <p>
+                        Here's what's happening with your deployments today.
+                    </p>
+
+                </div>
+
+
+                <button class="deploy-button">
+
+                    <span>+</span>
+
+                    New Deployment
+
+                </button>
+
+            </div>
+
+
+            <!-- Stats -->
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Deployment Risk</span>
+
+                        <div class="stat-icon blue">
+                            ◉
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-number">
+
+                        <strong id="riskScore">
+                            32
+                        </strong>
+
+                        <span>LOW</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar low"
+                            id="riskProgress">
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        ↓ 12% from last deployment
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Pipeline Health</span>
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <div class="big-number">
+                        94%
+                    </div>
+
+
+                    <p class="positive">
+                        ↑ 4.2% this week
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Active Projects</span>
+
+                        <div class="stat-icon purple">
+                            ▣
+                        </div>
+
+                    </div>
+
+
+                    <div class="big-number">
+                        8
+                    </div>
+
+
+                    <p>
+                        3 deployments today
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Successful Deployments</span>
+
+                        <div class="stat-icon cyan">
+                            🚀
+                        </div>
+
+                    </div>
+
+
+                    <div class="big-number">
+                        97.8%
+                    </div>
+
+
+                    <p class="positive">
+                        ↑ 1.8% this month
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Main Grid -->
+            <div class="dashboard-grid">
+
+
+                <!-- Risk Card -->
+                <div class="panel risk-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>Deployment Risk</h2>
+
+                            <p>
+                                Current production environment
+                            </p>
+
+                        </div>
+
+                        <button class="more">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="risk-content">
+
+                        <div class="risk-circle">
+
+                            <div>
+
+                                <strong id="circleScore">
+                                    32
+                                </strong>
+
+                                <span>LOW RISK</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="risk-info">
+
+                            <div class="risk-status">
+
+                                <span class="status-check">
+                                    ✓
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Safe to deploy
+                                    </strong>
+
+                                    <p>
+                                        No critical issues detected.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="risk-factor">
+
+                                <span>
+                                    Code Changes
+                                </span>
+
+                                <strong>
+                                    Low
+                                </strong>
+
+                            </div>
+
+
+                            <div class="risk-factor">
+
+                                <span>
+                                    Security
+                                </span>
+
+                                <strong>
+                                    Good
+                                </strong>
+
+                            </div>
+
+
+                            <div class="risk-factor">
+
+                                <span>
+                                    Test Coverage
+                                </span>
+
+                                <strong>
+                                    94%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Activity -->
+                <div class="panel activity-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>Deployment Activity</h2>
+
+                            <p>
+                                Last 7 days
+                            </p>
+
+                        </div>
+
+                        <select>
+                            <option>7 Days</option>
+                            <option>30 Days</option>
+                            <option>90 Days</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-lines"></div>
+
+                        <div class="bars">
+
+                            <span style="height:35%"></span>
+                            <span style="height:55%"></span>
+                            <span style="height:42%"></span>
+                            <span style="height:75%"></span>
+                            <span style="height:60%"></span>
+                            <span style="height:90%"></span>
+                            <span style="height:70%"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-labels">
+
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Bottom -->
+            <div class="bottom-grid">
+
+
+                <!-- Recent Deployments -->
+                <div class="panel deployments">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>Recent Deployments</h2>
+
+                            <p>
+                                Latest releases across your projects
+                            </p>
+
+                        </div>
+
+                        <button class="view-all">
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div class="deployment-list">
+
+
+                        <div class="deployment-row">
+
+                            <div class="project-icon blue">
+                                A
+                            </div>
+
+                            <div class="deployment-project">
+
+                                <strong>
+                                    api-service
+                                </strong>
+
+                                <span>
+                                    v2.4.1 • 8 min ago
+                                </span>
+
+                            </div>
+
+                            <div class="risk-tag low">
+                                LOW
+                            </div>
+
+                            <div class="deployment-status success">
+                                ✓ Successful
+                            </div>
+
+                        </div>
+
+
+                        <div class="deployment-row">
+
+                            <div class="project-icon purple">
+                                W
+                            </div>
+
+                            <div class="deployment-project">
+
+                                <strong>
+                                    web-frontend
+                                </strong>
+
+                                <span>
+                                    v1.8.3 • 32 min ago
+                                </span>
+
+                            </div>
+
+                            <div class="risk-tag medium">
+                                MEDIUM
+                            </div>
+
+                            <div class="deployment-status success">
+                                ✓ Successful
+                            </div>
+
+                        </div>
+
+
+                        <div class="deployment-row">
+
+                            <div class="project-icon cyan">
+                                P
+                            </div>
+
+                            <div class="deployment-project">
+
+                                <strong>
+                                    payment-service
+                                </strong>
+
+                                <span>
+                                    v3.1.0 • 1 hr ago
+                                </span>
+
+                            </div>
+
+                            <div class="risk-tag high">
+                                HIGH
+                            </div>
+
+                            <div class="deployment-status rollback">
+                                ↶ Rolled back
+                            </div>
+
+                        </div>
+
+
+                        <div class="deployment-row">
+
+                            <div class="project-icon green">
+                                M
+                            </div>
+
+                            <div class="deployment-project">
+
+                                <strong>
+                                    mobile-api
+                                </strong>
+
+                                <span>
+                                    v4.0.2 • 2 hrs ago
+                                </span>
+
+                            </div>
+
+                            <div class="risk-tag low">
+                                LOW
+                            </div>
+
+                            <div class="deployment-status success">
+                                ✓ Successful
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Alerts -->
+                <div class="panel alerts">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>Recent Alerts</h2>
+
+                            <p>
+                                System notifications
+                            </p>
+
+                        </div>
+
+                        <button class="view-all">
+                            View all
+                        </button>
+
+                    </div>
+
+
+                    <div class="alert-list">
+
+
+                        <div class="alert">
+
+                            <div class="alert-icon warning">
+                                !
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    High deployment risk
+                                </strong>
+
+                                <p>
+                                    payment-service
+                                </p>
+
+                                <small>
+                                    1 hour ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="alert">
+
+                            <div class="alert-icon info">
+                                i
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Deployment completed
+                                </strong>
+
+                                <p>
+                                    api-service v2.4.1
+                                </p>
+
+                                <small>
+                                    8 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="alert">
+
+                            <div class="alert-icon success">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Security scan passed
+                                </strong>
+
+                                <p>
+                                    web-frontend
+                                </p>
+
+                                <small>
+                                    32 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../auth.js"></script>
+    <script src="YOUR_PAGE.js"></script>
+</body>
+</html>

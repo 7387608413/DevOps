@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Deployment History</title>
+
+    <link rel="stylesheet" href="deployments.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="index.html" class="nav-item active">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="../monitoring/index.html" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="index.html" class="nav-item active-sub">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>Deployment History</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search deployments..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    RELEASE MANAGEMENT
+                </div>
+
+                <h1>
+                    Deployment History
+                </h1>
+
+                <p>
+                    Track, inspect and manage application deployments.
+                </p>
+
+            </div>
+
+
+            <button
+                class="deploy-button"
+                id="deployButton">
+
+                <span>🚀</span>
+                New Deployment
+
+            </button>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    🚀
+                </div>
+
+                <div>
+                    <span>Total Deployments</span>
+
+                    <strong id="totalDeployments">
+                        248
+                    </strong>
+
+                    <small>
+                        Last 30 days
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Successful</span>
+
+                    <strong>
+                        241
+                    </strong>
+
+                    <small class="success-text">
+                        97.2% success rate
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon red">
+                    !
+                </div>
+
+                <div>
+                    <span>Failed</span>
+
+                    <strong>
+                        7
+                    </strong>
+
+                    <small class="danger-text">
+                        2.8% failure rate
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon purple">
+                    ↶
+                </div>
+
+                <div>
+                    <span>Rollbacks</span>
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <small>
+                        Last 30 days
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="panel filter-panel">
+
+            <div class="filter-left">
+
+                <div class="filter-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        id="deploymentSearch"
+                        type="text"
+                        placeholder="Search version, commit or author..."
+                    >
+
+                </div>
+
+
+                <select
+                    id="environmentFilter"
+                    aria-label="Filter deployments by environment"
+                >
+
+                    <option value="all">
+                        All environments
+                    </option>
+
+                    <option value="production">
+                        Production
+                    </option>
+
+                    <option value="staging">
+                        Staging
+                    </option>
+
+                    <option value="development">
+                        Development
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="statusFilter"
+                    aria-label="Filter deployments by status"
+                >
+
+                    <option value="all">
+                        All statuses
+                    </option>
+
+                    <option value="success">
+                        Successful
+                    </option>
+
+                    <option value="failed">
+                        Failed
+                    </option>
+
+                    <option value="rollback">
+                        Rollback
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="reset-button"
+                id="resetFilters">
+
+                Reset filters
+
+            </button>
+
+        </div>
+
+
+        <!-- DEPLOYMENT TABLE -->
+
+        <div class="panel deployment-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Deployments
+                    </h2>
+
+                    <p>
+                        Latest application releases
+                    </p>
+
+                </div>
+
+
+                <span
+                    class="live-badge">
+
+                    ● LIVE
+
+                </span>
+
+            </div>
+
+
+            <div class="deployment-table">
+
+
+                <div class="table-head">
+
+                    <span>VERSION</span>
+                    <span>ENVIRONMENT</span>
+                    <span>COMMIT</span>
+                    <span>AUTHOR</span>
+                    <span>RISK</span>
+                    <span>STATUS</span>
+                    <span>TIME</span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="production"
+                    data-status="success">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.4.1
+                        </strong>
+
+                        <small>
+                            Current release
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment production">
+                        <span></span>
+                        Production
+                    </div>
+
+
+                    <code>
+                        8f3a2c1
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-low">
+                        32 LOW
+                    </b>
+
+
+                    <b class="status success">
+                        ✓ Deployed
+                    </b>
+
+
+                    <span>
+                        8 min ago
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="staging"
+                    data-status="success">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.4.0
+                        </strong>
+
+                        <small>
+                            Release candidate
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment staging">
+                        <span></span>
+                        Staging
+                    </div>
+
+
+                    <code>
+                        72bd911
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-medium">
+                        46 MEDIUM
+                    </b>
+
+
+                    <b class="status success">
+                        ✓ Deployed
+                    </b>
+
+
+                    <span>
+                        2 hrs ago
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="production"
+                    data-status="success">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.3.9
+                        </strong>
+
+                        <small>
+                            Bug fixes
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment production">
+                        <span></span>
+                        Production
+                    </div>
+
+
+                    <code>
+                        61aa442
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-low">
+                        28 LOW
+                    </b>
+
+
+                    <b class="status success">
+                        ✓ Deployed
+                    </b>
+
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="production"
+                    data-status="rollback">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.3.8
+                        </strong>
+
+                        <small>
+                            Database changes
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment production">
+                        <span></span>
+                        Production
+                    </div>
+
+
+                    <code>
+                        34c8d10
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-high">
+                        72 HIGH
+                    </b>
+
+
+                    <b class="status rollback">
+                        ↶ Rolled back
+                    </b>
+
+
+                    <span>
+                        Aug 20
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="staging"
+                    data-status="failed">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.3.7
+                        </strong>
+
+                        <small>
+                            Authentication update
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment staging">
+                        <span></span>
+                        Staging
+                    </div>
+
+
+                    <code>
+                        18fa2d1
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-high">
+                        81 HIGH
+                    </b>
+
+
+                    <b class="status failed">
+                        ✕ Failed
+                    </b>
+
+
+                    <span>
+                        Aug 19
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="production"
+                    data-status="success">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.3.6
+                        </strong>
+
+                        <small>
+                            Performance update
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment production">
+                        <span></span>
+                        Production
+                    </div>
+
+
+                    <code>
+                        9ba31f4
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-low">
+                        24 LOW
+                    </b>
+
+
+                    <b class="status success">
+                        ✓ Deployed
+                    </b>
+
+
+                    <span>
+                        Aug 17
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="deployment-row"
+                    data-environment="development"
+                    data-status="success">
+
+                    <div class="version">
+
+                        <strong>
+                            v2.3.5
+                        </strong>
+
+                        <small>
+                            Feature development
+                        </small>
+
+                    </div>
+
+
+                    <div class="environment development">
+                        <span></span>
+                        Development
+                    </div>
+
+
+                    <code>
+                        73c912a
+                    </code>
+
+
+                    <span>
+                        Developer
+                    </span>
+
+
+                    <b class="risk-low">
+                        19 LOW
+                    </b>
+
+
+                    <b class="status success">
+                        ✓ Deployed
+                    </b>
+
+
+                    <span>
+                        Aug 15
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pagination">
+
+                <span>
+                    Showing 7 of 248 deployments
+                </span>
+
+                <div>
+
+                    <button>‹</button>
+                    <button class="current">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>...</button>
+                    <button>36</button>
+                    <button>›</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="details-grid">
+
+
+            <div class="panel timeline-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Latest Deployment
+                        </h2>
+
+                        <p>
+                            v2.4.1 production release
+                        </p>
+
+                    </div>
+
+                    <b class="status success">
+                        ✓ SUCCESS
+                    </b>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Code committed
+                            </strong>
+
+                            <span>
+                                8f3a2c1 · Developer
+                            </span>
+                        </div>
+
+                        <time>
+                            10:39
+                        </time>
+
+                    </div>
+
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Build completed
+                            </strong>
+
+                            <span>
+                                Build #1048
+                            </span>
+                        </div>
+
+                        <time>
+                            10:40
+                        </time>
+
+                    </div>
+
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Security & risk checks
+                            </strong>
+
+                            <span>
+                                Risk score 32 · LOW
+                            </span>
+                        </div>
+
+                        <time>
+                            10:42
+                        </time>
+
+                    </div>
+
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Production deployment
+                            </strong>
+
+                            <span>
+                                All services healthy
+                            </span>
+                        </div>
+
+                        <time>
+                            10:44
+                        </time>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel release-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Release Details
+                        </h2>
+
+                        <p>
+                            v2.4.1
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="release-details">
+
+                    <div>
+                        <span>Environment</span>
+                        <strong>Production</strong>
+                    </div>
+
+                    <div>
+                        <span>Duration</span>
+                        <strong>3m 21s</strong>
+                    </div>
+
+                    <div>
+                        <span>Files Changed</span>
+                        <strong>24</strong>
+                    </div>
+
+                    <div>
+                        <span>Tests</span>
+                        <strong>124 passed</strong>
+                    </div>
+
+                    <div>
+                        <span>Coverage</span>
+                        <strong>94%</strong>
+                    </div>
+
+                    <div>
+                        <span>Risk Score</span>
+                        <strong class="green-text">32 LOW</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="release-actions">
+
+                    <button
+                        class="secondary-button">
+
+                        View Commit
+
+                    </button>
+
+                    <button
+                        class="rollback-button"
+                        id="rollbackButton">
+
+                        ↶ Rollback
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script src="deployments.js"></script>
+
+</body>
+</html>

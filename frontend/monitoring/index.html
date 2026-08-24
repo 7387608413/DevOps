@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Monitoring</title>
+
+    <link rel="stylesheet" href="monitoring.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="index.html" class="nav-item active">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>Monitoring</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    LIVE SYSTEM OBSERVABILITY
+                </div>
+
+                <h1>
+                    System Monitoring
+                </h1>
+
+                <p>
+                    Monitor application health and infrastructure performance in real time.
+                </p>
+
+            </div>
+
+
+            <div class="live-status">
+
+                <span></span>
+
+                Live Monitoring
+
+            </div>
+
+        </div>
+
+
+        <!-- OVERVIEW -->
+
+        <div class="overview-grid">
+
+
+            <div class="metric-card">
+
+                <div class="metric-top">
+
+                    <span>System Uptime</span>
+
+                    <div class="metric-icon green">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <strong class="metric-value">
+                    99.98%
+                </strong>
+
+
+                <div class="metric-bottom">
+
+                    <span class="positive">
+                        ↑ 0.02%
+                    </span>
+
+                    <span>
+                        Last 30 days
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-top">
+
+                    <span>Avg Response Time</span>
+
+                    <div class="metric-icon blue">
+                        ◷
+                    </div>
+
+                </div>
+
+
+                <strong
+                    class="metric-value"
+                    id="responseValue">
+
+                    124ms
+
+                </strong>
+
+
+                <div class="metric-bottom">
+
+                    <span class="positive">
+                        ↓ 8ms
+                    </span>
+
+                    <span>
+                        Last hour
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-top">
+
+                    <span>Error Rate</span>
+
+                    <div class="metric-icon red">
+                        !
+                    </div>
+
+                </div>
+
+
+                <strong
+                    class="metric-value"
+                    id="errorValue">
+
+                    0.12%
+
+                </strong>
+
+
+                <div class="metric-bottom">
+
+                    <span class="positive">
+                        ↓ 0.04%
+                    </span>
+
+                    <span>
+                        Last hour
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-top">
+
+                    <span>Requests / min</span>
+
+                    <div class="metric-icon purple">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <strong
+                    class="metric-value"
+                    id="requestValue">
+
+                    8,426
+
+                </strong>
+
+
+                <div class="metric-bottom">
+
+                    <span class="positive">
+                        ↑ 12.4%
+                    </span>
+
+                    <span>
+                        Current
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHARTS -->
+
+        <div class="charts-grid">
+
+
+            <!-- RESPONSE TIME -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Response Time
+                        </h2>
+
+                        <p>
+                            Average API latency
+                        </p>
+
+                    </div>
+
+
+                    <select class="time-select">
+
+                        <option>Last 1 hour</option>
+                        <option>Last 6 hours</option>
+                        <option>Last 24 hours</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart-value">
+
+                    <strong id="latencyNumber">
+                        124
+                    </strong>
+
+                    <span>ms</span>
+
+                    <small>
+                        average
+                    </small>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="responseChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- REQUESTS -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Request Rate
+                        </h2>
+
+                        <p>
+                            Incoming requests
+                        </p>
+
+                    </div>
+
+
+                    <select class="time-select">
+
+                        <option>Last 1 hour</option>
+                        <option>Last 6 hours</option>
+                        <option>Last 24 hours</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart-value">
+
+                    <strong id="requestNumber">
+                        8.4K
+                    </strong>
+
+                    <span>/min</span>
+
+                    <small>
+                        current
+                    </small>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="requestChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESOURCE + SERVICES -->
+
+        <div class="resource-grid">
+
+
+            <!-- RESOURCE USAGE -->
+
+            <div class="panel resource-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Infrastructure
+                        </h2>
+
+                        <p>
+                            Current resource utilization
+                        </p>
+
+                    </div>
+
+                    <span class="healthy-badge">
+                        ● HEALTHY
+                    </span>
+
+                </div>
+
+
+                <div class="resource-list">
+
+
+                    <div class="resource">
+
+                        <div class="resource-header">
+
+                            <div>
+
+                                <strong>
+                                    CPU Usage
+                                </strong>
+
+                                <span>
+                                    Production Cluster
+                                </span>
+
+                            </div>
+
+                            <b id="cpuValue">
+                                42%
+                            </b>
+
+                        </div>
+
+
+                        <div class="resource-bar">
+
+                            <div
+                                id="cpuBar"
+                                class="cpu-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-header">
+
+                            <div>
+
+                                <strong>
+                                    Memory Usage
+                                </strong>
+
+                                <span>
+                                    12.8 GB / 32 GB
+                                </span>
+
+                            </div>
+
+                            <b id="memoryValue">
+                                40%
+                            </b>
+
+                        </div>
+
+
+                        <div class="resource-bar">
+
+                            <div
+                                id="memoryBar"
+                                class="memory-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-header">
+
+                            <div>
+
+                                <strong>
+                                    Disk Usage
+                                </strong>
+
+                                <span>
+                                    184 GB / 500 GB
+                                </span>
+
+                            </div>
+
+                            <b>
+                                37%
+                            </b>
+
+                        </div>
+
+
+                        <div class="resource-bar">
+
+                            <div
+                                class="disk-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-header">
+
+                            <div>
+
+                                <strong>
+                                    Network
+                                </strong>
+
+                                <span>
+                                    Inbound / Outbound
+                                </span>
+
+                            </div>
+
+                            <b id="networkValue">
+                                62%
+                            </b>
+
+                        </div>
+
+
+                        <div class="resource-bar">
+
+                            <div
+                                id="networkBar"
+                                class="network-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="panel services-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Services
+                        </h2>
+
+                        <p>
+                            Application health
+                        </p>
+
+                    </div>
+
+                    <button class="view-all">
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div class="service-list">
+
+
+                    <div class="service">
+
+                        <div class="service-icon blue">
+                            A
+                        </div>
+
+                        <div class="service-info">
+
+                            <strong>
+                                API Service
+                            </strong>
+
+                            <span>
+                                api.production
+                            </span>
+
+                        </div>
+
+                        <div class="service-health">
+
+                            <span></span>
+
+                            Operational
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon purple">
+                            W
+                        </div>
+
+                        <div class="service-info">
+
+                            <strong>
+                                Web Frontend
+                            </strong>
+
+                            <span>
+                                web.production
+                            </span>
+
+                        </div>
+
+                        <div class="service-health">
+
+                            <span></span>
+
+                            Operational
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon cyan">
+                            P
+                        </div>
+
+                        <div class="service-info">
+
+                            <strong>
+                                Payment Service
+                            </strong>
+
+                            <span>
+                                payment.production
+                            </span>
+
+                        </div>
+
+                        <div class="service-health warning-health">
+
+                            <span></span>
+
+                            Degraded
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon green">
+                            A
+                        </div>
+
+                        <div class="service-info">
+
+                            <strong>
+                                Auth Service
+                            </strong>
+
+                            <span>
+                                auth.production
+                            </span>
+
+                        </div>
+
+                        <div class="service-health">
+
+                            <span></span>
+
+                            Operational
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon orange">
+                            N
+                        </div>
+
+                        <div class="service-info">
+
+                            <strong>
+                                Notification
+                            </strong>
+
+                            <span>
+                                notification.production
+                            </span>
+
+                        </div>
+
+                        <div class="service-health">
+
+                            <span></span>
+
+                            Operational
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INCIDENTS -->
+
+        <div class="panel incidents-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Recent Incidents
+                    </h2>
+
+                    <p>
+                        System events and alerts
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View all →
+                </button>
+
+            </div>
+
+
+            <div class="incident-list">
+
+
+                <div class="incident">
+
+                    <div class="incident-icon warning">
+                        !
+                    </div>
+
+                    <div class="incident-info">
+
+                        <strong>
+                            Elevated payment-service latency
+                        </strong>
+
+                        <span>
+                            Response time increased above 500ms
+                        </span>
+
+                    </div>
+
+                    <div class="incident-time">
+                        18 min ago
+                    </div>
+
+                    <b class="incident-status investigating">
+                        INVESTIGATING
+                    </b>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon success">
+                        ✓
+                    </div>
+
+                    <div class="incident-info">
+
+                        <strong>
+                            API service recovered
+                        </strong>
+
+                        <span>
+                            Response time returned to normal
+                        </span>
+
+                    </div>
+
+                    <div class="incident-time">
+                        2 hrs ago
+                    </div>
+
+                    <b class="incident-status resolved">
+                        RESOLVED
+                    </b>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon info">
+                        i
+                    </div>
+
+                    <div class="incident-info">
+
+                        <strong>
+                            Scheduled maintenance completed
+                        </strong>
+
+                        <span>
+                            Production database maintenance finished
+                        </span>
+
+                    </div>
+
+                    <div class="incident-time">
+                        Yesterday
+                    </div>
+
+                    <b class="incident-status resolved">
+                        COMPLETED
+                    </b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script src="monitoring.js"></script>
+
+</body>
+</html>

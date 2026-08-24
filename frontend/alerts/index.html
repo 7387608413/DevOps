@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Alerts</title>
+
+    <link rel="stylesheet" href="alerts.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="../monitoring/index.html" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="index.html" class="nav-item active">
+            <span>🔔</span>
+            Alerts
+            <b id="sidebarAlertCount">3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>Alerts</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    SYSTEM EVENTS & NOTIFICATIONS
+                </div>
+
+                <h1>
+                    Alerts
+                </h1>
+
+                <p>
+                    Monitor critical events and take action before they affect production.
+                </p>
+
+            </div>
+
+
+            <button
+                class="mark-all"
+                id="markAll">
+
+                ✓ Mark all as read
+
+            </button>
+
+        </div>
+
+
+        <!-- ALERT SUMMARY -->
+
+        <div class="summary-grid">
+
+
+            <div class="summary-card critical-card">
+
+                <div class="summary-icon critical">
+                    !
+                </div>
+
+                <div>
+
+                    <span>Critical</span>
+
+                    <strong id="criticalCount">
+                        1
+                    </strong>
+
+                    <small>
+                        Requires immediate action
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card warning-card">
+
+                <div class="summary-icon warning">
+                    !
+                </div>
+
+                <div>
+
+                    <span>Warnings</span>
+
+                    <strong id="warningCount">
+                        2
+                    </strong>
+
+                    <small>
+                        Needs attention
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card info-card">
+
+                <div class="summary-icon info">
+                    i
+                </div>
+
+                <div>
+
+                    <span>Information</span>
+
+                    <strong id="infoCount">
+                        4
+                    </strong>
+
+                    <small>
+                        System notifications
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card resolved-card">
+
+                <div class="summary-icon resolved">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>Resolved Today</span>
+
+                    <strong id="resolvedCount">
+                        12
+                    </strong>
+
+                    <small class="success-text">
+                        All clear
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTER BAR -->
+
+        <div class="panel filter-panel">
+
+            <div class="filter-left">
+
+                <div class="filter-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="alertSearch"
+                        placeholder="Search alerts..."
+                    >
+
+                </div>
+
+
+                <select id="severityFilter">
+
+                    <option value="all">
+                        All severity
+                    </option>
+
+                    <option value="critical">
+                        Critical
+                    </option>
+
+                    <option value="warning">
+                        Warning
+                    </option>
+
+                    <option value="info">
+                        Information
+                    </option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="acknowledged">
+                        Acknowledged
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+
+                <select id="serviceFilter">
+
+                    <option value="all">
+                        All services
+                    </option>
+
+                    <option value="api">
+                        API Service
+                    </option>
+
+                    <option value="payment">
+                        Payment Service
+                    </option>
+
+                    <option value="database">
+                        Database
+                    </option>
+
+                    <option value="frontend">
+                        Web Frontend
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="reset-button"
+                id="resetFilters">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <!-- ACTIVE ALERTS -->
+
+        <div class="panel alerts-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Active Alerts
+                    </h2>
+
+                    <p>
+                        Events requiring your attention
+                    </p>
+
+                </div>
+
+
+                <div class="live-indicator">
+
+                    <span></span>
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="alert-list"
+                id="alertList">
+
+
+                <!-- CRITICAL -->
+
+                <article
+                    class="alert-row unread"
+                    data-severity="critical"
+                    data-status="active"
+                    data-service="payment">
+
+
+                    <div class="alert-severity critical">
+                        !
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                Payment Service latency is critically high
+                            </strong>
+
+                            <span class="severity-label critical-label">
+                                CRITICAL
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Average response time has exceeded 1,200ms for the last 5 minutes.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ Payment Service
+                            </span>
+
+                            <span>
+                                ◷ 4 minutes ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value critical-value">
+
+                        <strong>
+                            1.24s
+                        </strong>
+
+                        <span>
+                            response time
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <button
+                            class="ack-button"
+                            data-action="acknowledge">
+
+                            Acknowledge
+
+                        </button>
+
+                        <button
+                            class="more-button">
+
+                            ⋮
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WARNING -->
+
+                <article
+                    class="alert-row unread"
+                    data-severity="warning"
+                    data-status="active"
+                    data-service="database">
+
+
+                    <div class="alert-severity warning">
+                        !
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                Database storage usage above threshold
+                            </strong>
+
+                            <span class="severity-label warning-label">
+                                WARNING
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Production database storage has reached 78% capacity.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ Database
+                            </span>
+
+                            <span>
+                                ◷ 18 minutes ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value warning-value">
+
+                        <strong>
+                            78%
+                        </strong>
+
+                        <span>
+                            storage used
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <button
+                            class="ack-button"
+                            data-action="acknowledge">
+
+                            Acknowledge
+
+                        </button>
+
+                        <button class="more-button">
+                            ⋮
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WARNING -->
+
+                <article
+                    class="alert-row"
+                    data-severity="warning"
+                    data-status="acknowledged"
+                    data-service="api">
+
+
+                    <div class="alert-severity warning">
+                        !
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                API error rate increased
+                            </strong>
+
+                            <span class="severity-label warning-label">
+                                WARNING
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            HTTP 5xx errors increased from 0.08% to 0.42%.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ API Service
+                            </span>
+
+                            <span>
+                                ◷ 32 minutes ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value warning-value">
+
+                        <strong>
+                            0.42%
+                        </strong>
+
+                        <span>
+                            error rate
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <span class="acknowledged-badge">
+                            ✓ Acknowledged
+                        </span>
+
+                        <button class="more-button">
+                            ⋮
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INFO -->
+
+                <article
+                    class="alert-row"
+                    data-severity="info"
+                    data-status="active"
+                    data-service="frontend">
+
+
+                    <div class="alert-severity info">
+                        i
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                New frontend deployment completed
+                            </strong>
+
+                            <span class="severity-label info-label">
+                                INFO
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Web Frontend v2.4.1 has been successfully deployed to production.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ Web Frontend
+                            </span>
+
+                            <span>
+                                ◷ 1 hour ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value info-value">
+
+                        <strong>
+                            v2.4.1
+                        </strong>
+
+                        <span>
+                            deployment
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <button
+                            class="ack-button"
+                            data-action="acknowledge">
+
+                            Mark read
+
+                        </button>
+
+                        <button class="more-button">
+                            ⋮
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INFO -->
+
+                <article
+                    class="alert-row"
+                    data-severity="info"
+                    data-status="resolved"
+                    data-service="api">
+
+
+                    <div class="alert-severity info">
+                        i
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                API service recovered
+                            </strong>
+
+                            <span class="severity-label resolved-label">
+                                RESOLVED
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            API response times have returned to normal levels.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ API Service
+                            </span>
+
+                            <span>
+                                ◷ 2 hours ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value resolved-value">
+
+                        <strong>
+                            124ms
+                        </strong>
+
+                        <span>
+                            response time
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <span class="resolved-badge">
+                            ✓ Resolved
+                        </span>
+
+                        <button class="more-button">
+                            ⋮
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INFO -->
+
+                <article
+                    class="alert-row"
+                    data-severity="info"
+                    data-status="resolved"
+                    data-service="database">
+
+
+                    <div class="alert-severity info">
+                        i
+                    </div>
+
+
+                    <div class="alert-main">
+
+                        <div class="alert-title-row">
+
+                            <strong>
+                                Database maintenance completed
+                            </strong>
+
+                            <span class="severity-label resolved-label">
+                                RESOLVED
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Scheduled database maintenance completed successfully.
+                        </p>
+
+
+                        <div class="alert-meta">
+
+                            <span>
+                                ◉ Database
+                            </span>
+
+                            <span>
+                                ◷ 4 hours ago
+                            </span>
+
+                            <span>
+                                Production
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-value resolved-value">
+
+                        <strong>
+                            Healthy
+                        </strong>
+
+                        <span>
+                            database
+                        </span>
+
+                    </div>
+
+
+                    <div class="alert-actions">
+
+                        <span class="resolved-badge">
+                            ✓ Resolved
+                        </span>
+
+                        <button class="more-button">
+                            ⋮
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div
+                class="empty-state"
+                id="emptyState">
+
+                <div>
+                    ✓
+                </div>
+
+                <strong>
+                    No matching alerts
+                </strong>
+
+                <span>
+                    Try changing your filters or search.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALERT HISTORY -->
+
+        <div class="panel history-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Alert Activity
+                    </h2>
+
+                    <p>
+                        Recent alert actions
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View history →
+                </button>
+
+            </div>
+
+
+            <div class="history-list">
+
+
+                <div class="history-item">
+
+                    <div class="history-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            API Service alert resolved
+                        </strong>
+
+                        <span>
+                            Response time returned below threshold
+                        </span>
+
+                    </div>
+
+                    <time>
+                        2 hrs ago
+                    </time>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon blue">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Alert acknowledged by Developer
+                        </strong>
+
+                        <span>
+                            API error rate increased
+                        </span>
+
+                    </div>
+
+                    <time>
+                        32 min ago
+                    </time>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon yellow">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Database storage warning triggered
+                        </strong>
+
+                        <span>
+                            Storage crossed 75% threshold
+                        </span>
+
+                    </div>
+
+                    <time>
+                        18 min ago
+                    </time>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon purple">
+                        🚀
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Deployment notification
+                        </strong>
+
+                        <span>
+                            Web Frontend v2.4.1 deployed successfully
+                        </span>
+
+                    </div>
+
+                    <time>
+                        1 hr ago
+                    </time>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script src="alerts.js"></script>
+
+</body>
+</html>

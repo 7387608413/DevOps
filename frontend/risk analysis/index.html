@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Risk Analysis</title>
+
+    <link rel="stylesheet" href="risk.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="index.html" class="nav-item active">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="#" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>Risk Analysis</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+            </div>
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    AI-POWERED ASSESSMENT
+                </div>
+
+                <h1>
+                    Deployment Risk Analysis
+                </h1>
+
+                <p>
+                    Analyze deployment risk before your code reaches production.
+                </p>
+
+            </div>
+
+
+            <button
+                class="analyze-button"
+                id="analyzeButton">
+
+                <span>✦</span>
+                Run Analysis
+
+            </button>
+
+        </div>
+
+
+        <!-- PROJECT SELECTOR -->
+
+        <div class="project-selector">
+
+            <div class="selected-project">
+
+                <div class="project-logo">
+                    A
+                </div>
+
+                <div>
+
+                    <span>ANALYZING PROJECT</span>
+
+                    <strong>
+                        API Service
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="commit-info">
+
+                <div>
+                    <span>BRANCH</span>
+                    <strong>⎇ main</strong>
+                </div>
+
+                <div>
+                    <span>COMMIT</span>
+                    <strong>8f3a2c1</strong>
+                </div>
+
+                <div>
+                    <span>CHANGES</span>
+                    <strong>24 files</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RISK OVERVIEW -->
+
+        <div class="risk-overview">
+
+
+            <!-- SCORE -->
+
+            <div class="panel score-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Overall Risk Score</h2>
+
+                        <p>
+                            AI calculated deployment risk
+                        </p>
+                    </div>
+
+                    <span class="live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="score-area">
+
+                    <div class="risk-gauge">
+
+                        <div class="gauge-inner">
+
+                            <strong id="riskScore">
+                                32
+                            </strong>
+
+                            <span>LOW RISK</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-description">
+
+                        <div class="safe-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Safe to deploy
+                            </h3>
+
+                            <p>
+                                No critical risk factors detected.
+                                Your deployment is currently within
+                                the safe threshold.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="threshold">
+
+                    <div class="threshold-labels">
+                        <span>LOW</span>
+                        <span>MEDIUM</span>
+                        <span>HIGH</span>
+                        <span>CRITICAL</span>
+                    </div>
+
+                    <div class="threshold-bar">
+
+                        <span class="marker"></span>
+
+                    </div>
+
+                    <div class="threshold-numbers">
+                        <span>0</span>
+                        <span>40</span>
+                        <span>70</span>
+                        <span>90</span>
+                        <span>100</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RISK SUMMARY -->
+
+            <div class="panel summary-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Risk Summary</h2>
+
+                        <p>
+                            Key assessment factors
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-item-icon blue">
+                        ◈
+                    </div>
+
+                    <div class="risk-item-info">
+
+                        <div>
+                            <strong>Code Changes</strong>
+                            <span>LOW</span>
+                        </div>
+
+                        <div class="mini-progress">
+                            <i style="width: 24%"></i>
+                        </div>
+
+                        <small>
+                            24 changed files
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-item-icon red">
+                        ◉
+                    </div>
+
+                    <div class="risk-item-info">
+
+                        <div>
+                            <strong>Security</strong>
+                            <span class="good">GOOD</span>
+                        </div>
+
+                        <div class="mini-progress">
+                            <i class="security-bar" style="width: 18%"></i>
+                        </div>
+
+                        <small>
+                            No critical vulnerabilities
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-item-icon green">
+                        ✓
+                    </div>
+
+                    <div class="risk-item-info">
+
+                        <div>
+                            <strong>Test Coverage</strong>
+                            <span class="good">GOOD</span>
+                        </div>
+
+                        <div class="mini-progress">
+                            <i class="test-bar" style="width: 94%"></i>
+                        </div>
+
+                        <small>
+                            94% coverage
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-item-icon yellow">
+                        ◇
+                    </div>
+
+                    <div class="risk-item-info">
+
+                        <div>
+                            <strong>Dependencies</strong>
+                            <span>LOW</span>
+                        </div>
+
+                        <div class="mini-progress">
+                            <i class="dependency-bar" style="width: 28%"></i>
+                        </div>
+
+                        <small>
+                            2 outdated packages
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOWER GRID -->
+
+        <div class="lower-grid">
+
+
+            <!-- RISK FACTORS -->
+
+            <div class="panel factors-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Risk Factors</h2>
+
+                        <p>
+                            Detailed analysis of deployment conditions
+                        </p>
+                    </div>
+
+                    <button class="more">
+                        •••
+                    </button>
+
+                </div>
+
+
+                <div class="factor-list">
+
+
+                    <div class="factor">
+
+                        <div class="factor-main">
+
+                            <div class="factor-icon blue">
+                                #
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Code Complexity
+                                </strong>
+
+                                <p>
+                                    Changes are relatively small
+                                    and isolated.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="factor-status low">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="factor">
+
+                        <div class="factor-main">
+
+                            <div class="factor-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Test Coverage
+                                </strong>
+
+                                <p>
+                                    Automated tests cover 94%
+                                    of changed code.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="factor-status low">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="factor">
+
+                        <div class="factor-main">
+
+                            <div class="factor-icon cyan">
+                                ◉
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Security Vulnerabilities
+                                </strong>
+
+                                <p>
+                                    No high severity vulnerabilities
+                                    detected.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="factor-status low">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="factor">
+
+                        <div class="factor-main">
+
+                            <div class="factor-icon yellow">
+                                ◇
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Dependency Health
+                                </strong>
+
+                                <p>
+                                    Two packages require updates.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="factor-status medium">
+                            MEDIUM
+                        </span>
+
+                    </div>
+
+
+                    <div class="factor">
+
+                        <div class="factor-main">
+
+                            <div class="factor-icon purple">
+                                ⚙
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Infrastructure Impact
+                                </strong>
+
+                                <p>
+                                    No infrastructure changes detected.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="factor-status low">
+                            LOW
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <div class="panel recommendation-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>AI Recommendations</h2>
+
+                        <p>
+                            Actions to reduce deployment risk
+                        </p>
+                    </div>
+
+                    <span class="ai-badge">
+                        ✦ AI
+                    </span>
+
+                </div>
+
+
+                <div class="recommendations">
+
+
+                    <div class="recommendation">
+
+                        <div class="recommendation-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Update dependencies
+                            </strong>
+
+                            <p>
+                                Update the two outdated packages
+                                before the next release.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation">
+
+                        <div class="recommendation-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Maintain test coverage
+                            </strong>
+
+                            <p>
+                                Keep coverage above 90% for
+                                production deployments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation">
+
+                        <div class="recommendation-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Review release changes
+                            </strong>
+
+                            <p>
+                                Review the 24 changed files
+                                before deployment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="recommendation-footer">
+
+                    <span>
+                        ✓ Deployment recommendation
+                    </span>
+
+                    <strong>
+                        SAFE TO DEPLOY
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HISTORY -->
+
+        <div class="panel history-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Risk History
+                    </h2>
+
+                    <p>
+                        Previous deployment assessments
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View history →
+                </button>
+
+            </div>
+
+
+            <div class="history-table">
+
+                <div class="history-head">
+
+                    <span>VERSION</span>
+                    <span>DATE</span>
+                    <span>RISK SCORE</span>
+                    <span>LEVEL</span>
+                    <span>RESULT</span>
+
+                </div>
+
+
+                <div class="history-row">
+
+                    <strong>v2.4.1</strong>
+                    <span>Today, 10:42 AM</span>
+                    <span>32</span>
+
+                    <b class="history-low">
+                        LOW
+                    </b>
+
+                    <span class="success">
+                        ✓ Deployed
+                    </span>
+
+                </div>
+
+
+                <div class="history-row">
+
+                    <strong>v2.4.0</strong>
+                    <span>Yesterday, 4:18 PM</span>
+                    <span>46</span>
+
+                    <b class="history-medium">
+                        MEDIUM
+                    </b>
+
+                    <span class="success">
+                        ✓ Deployed
+                    </span>
+
+                </div>
+
+
+                <div class="history-row">
+
+                    <strong>v2.3.9</strong>
+                    <span>Aug 22, 2:31 PM</span>
+                    <span>28</span>
+
+                    <b class="history-low">
+                        LOW
+                    </b>
+
+                    <span class="success">
+                        ✓ Deployed
+                    </span>
+
+                </div>
+
+
+                <div class="history-row">
+
+                    <strong>v2.3.8</strong>
+                    <span>Aug 20, 11:07 AM</span>
+                    <span>72</span>
+
+                    <b class="history-high">
+                        HIGH
+                    </b>
+
+                    <span class="failed">
+                        ↶ Rolled back
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="risk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Projects</title>
+
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">D</div>
+
+            <div>
+                <h2>DevGuard</h2>
+                <span>DEVOPS INTELLIGENCE</span>
+            </div>
+
+        </div>
+
+
+        <div class="workspace">
+
+            <div class="workspace-icon">P</div>
+
+            <div>
+                <strong>Production</strong>
+                <small>Workspace</small>
+            </div>
+
+            <span class="workspace-arrow">⌄</span>
+
+        </div>
+
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="../dashboard/index.html" class="nav-item">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="index.html" class="nav-item active">
+                <span>▣</span>
+                Projects
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🚀</span>
+                Deployments
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◉</span>
+                Risk Analysis
+            </a>
+
+
+            <p class="nav-title">DEVOPS</p>
+
+            <a href="#" class="nav-item">
+                <span>⚡</span>
+                CI/CD Pipeline
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◌</span>
+                Monitoring
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◷</span>
+                Deployment History
+            </a>
+
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="#" class="nav-item">
+                <span>🔔</span>
+                Alerts
+
+                <b>3</b>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+
+                <span class="online-dot"></span>
+
+                <div>
+                    <strong>All systems operational</strong>
+                    <small>Last checked just now</small>
+                </div>
+
+            </div>
+
+
+            <div class="user">
+
+                <div class="avatar">
+                    U
+                </div>
+
+                <div>
+                    <strong>User</strong>
+                    <small>Developer</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button id="menuButton">
+                    ☰
+                </button>
+
+                <span>
+                    Projects
+                </span>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search projects..."
+                    >
+
+                </div>
+
+                <button class="notification">
+                    🔔
+                    <i></i>
+                </button>
+
+                <div class="top-avatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="page-label">
+                        WORKSPACE
+                    </div>
+
+                    <h1>
+                        Your Projects
+                    </h1>
+
+                    <p>
+                        Manage your applications, repositories and deployments.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="create-button"
+                    id="createProject">
+
+                    <span>+</span>
+
+                    New Project
+
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="summary">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        ▣
+                    </div>
+
+                    <div>
+
+                        <strong>8</strong>
+
+                        <span>Total Projects</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>7</strong>
+
+                        <span>Healthy Projects</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon yellow">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>1</strong>
+
+                        <span>Needs Attention</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        🚀
+                    </div>
+
+                    <div>
+
+                        <strong>24</strong>
+
+                        <span>Deployments This Week</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTER BAR -->
+
+            <div class="toolbar">
+
+                <div class="filters">
+
+                    <button class="filter active" data-filter="all">
+                        All Projects
+                    </button>
+
+                    <button class="filter" data-filter="healthy">
+                        Healthy
+                    </button>
+
+                    <button class="filter" data-filter="warning">
+                        Needs Attention
+                    </button>
+
+                </div>
+
+
+                <select id="sortProjects">
+
+                    <option value="recent">
+                        Recently Updated
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                    <option value="risk">
+                        Risk Level
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PROJECT GRID -->
+
+            <div class="project-grid" id="projectGrid">
+
+
+                <!-- PROJECT 1 -->
+
+                <article
+                    class="project-card"
+                    data-status="healthy"
+                    data-name="API Service"
+                    data-risk="low">
+
+                    <div class="project-top">
+
+                        <div class="project-logo blue">
+                            A
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>API Service</h2>
+
+                        <span>
+                            Backend API
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/api-service
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ main
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="low-text">
+                                24 LOW
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="success-text">
+                                ✓ Passed
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health">
+
+                            <span></span>
+
+                            Healthy
+
+                        </div>
+
+                        <small>
+                            Updated 8 min ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article
+                    class="project-card"
+                    data-status="healthy"
+                    data-name="Web Frontend"
+                    data-risk="low">
+
+                    <div class="project-top">
+
+                        <div class="project-logo purple">
+                            W
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>Web Frontend</h2>
+
+                        <span>
+                            Customer Dashboard
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/web-frontend
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ main
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="low-text">
+                                31 LOW
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="success-text">
+                                ✓ Passed
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health">
+
+                            <span></span>
+
+                            Healthy
+
+                        </div>
+
+                        <small>
+                            Updated 32 min ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+
+                <article
+                    class="project-card"
+                    data-status="warning"
+                    data-name="Payment Service"
+                    data-risk="high">
+
+                    <div class="project-top">
+
+                        <div class="project-logo red">
+                            P
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>Payment Service</h2>
+
+                        <span>
+                            Payment Processing
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/payment-service
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ release
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="high-text">
+                                78 HIGH
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="warning-text">
+                                ! Warning
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health warning-health">
+
+                            <span></span>
+
+                            Needs attention
+
+                        </div>
+
+                        <small>
+                            Updated 1 hr ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 4 -->
+
+                <article
+                    class="project-card"
+                    data-status="healthy"
+                    data-name="Mobile API"
+                    data-risk="low">
+
+                    <div class="project-top">
+
+                        <div class="project-logo cyan">
+                            M
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>Mobile API</h2>
+
+                        <span>
+                            Mobile Application
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/mobile-api
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ main
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="low-text">
+                                18 LOW
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="success-text">
+                                ✓ Passed
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health">
+
+                            <span></span>
+
+                            Healthy
+
+                        </div>
+
+                        <small>
+                            Updated 2 hrs ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 5 -->
+
+                <article
+                    class="project-card"
+                    data-status="healthy"
+                    data-name="Auth Service"
+                    data-risk="low">
+
+                    <div class="project-top">
+
+                        <div class="project-logo green">
+                            A
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>Auth Service</h2>
+
+                        <span>
+                            Authentication
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/auth-service
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ main
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="low-text">
+                                12 LOW
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="success-text">
+                                ✓ Passed
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health">
+
+                            <span></span>
+
+                            Healthy
+
+                        </div>
+
+                        <small>
+                            Updated 3 hrs ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 6 -->
+
+                <article
+                    class="project-card"
+                    data-status="healthy"
+                    data-name="Notification Service"
+                    data-risk="medium">
+
+                    <div class="project-top">
+
+                        <div class="project-logo orange">
+                            N
+                        </div>
+
+                        <button class="card-menu">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="project-title">
+
+                        <h2>Notification Service</h2>
+
+                        <span>
+                            Messaging Platform
+                        </span>
+
+                    </div>
+
+
+                    <div class="repository">
+
+                        <span>⌘</span>
+
+                        company/notification-service
+
+                    </div>
+
+
+                    <div class="branch">
+                        ⎇ develop
+                    </div>
+
+
+                    <div class="project-divider"></div>
+
+
+                    <div class="project-stats">
+
+                        <div>
+                            <span>Risk</span>
+                            <strong class="medium-text">
+                                47 MEDIUM
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Build</span>
+                            <strong class="success-text">
+                                ✓ Passed
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div class="health">
+
+                            <span></span>
+
+                            Healthy
+
+                        </div>
+
+                        <small>
+                            Updated 5 hrs ago
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- EMPTY SEARCH -->
+
+            <div
+                class="empty"
+                id="emptyState">
+
+                <div>⌕</div>
+
+                <h2>
+                    No projects found
+                </h2>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

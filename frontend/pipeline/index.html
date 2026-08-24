@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | CI/CD Pipeline</title>
+
+    <link rel="stylesheet" href="pipeline.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="index.html" class="nav-item active">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>CI/CD Pipeline</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    CONTINUOUS INTEGRATION & DEPLOYMENT
+                </div>
+
+                <h1>
+                    CI/CD Pipeline
+                </h1>
+
+                <p>
+                    Build, test, analyze and deploy your application safely.
+                </p>
+
+            </div>
+
+
+            <button
+                class="run-button"
+                id="runPipeline">
+
+                <span>▶</span>
+
+                Run Pipeline
+
+            </button>
+
+        </div>
+
+
+        <!-- PIPELINE HEADER -->
+
+        <div class="pipeline-header panel">
+
+            <div class="pipeline-project">
+
+                <div class="project-logo">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        API Service
+                    </strong>
+
+                    <span>
+                        company/api-service
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-meta">
+
+                <div>
+                    <span>BRANCH</span>
+                    <strong>⎇ main</strong>
+                </div>
+
+                <div>
+                    <span>COMMIT</span>
+                    <strong>8f3a2c1</strong>
+                </div>
+
+                <div>
+                    <span>AUTHOR</span>
+                    <strong>Developer</strong>
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong id="pipelineStatus">
+                        Pipeline Ready
+                    </strong>
+
+                    <small>
+                        Last run 8 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PIPELINE FLOW -->
+
+        <div class="panel pipeline-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Deployment Pipeline
+                    </h2>
+
+                    <p>
+                        Automated deployment workflow
+                    </p>
+
+                </div>
+
+                <span class="pipeline-time">
+                    ~ 4 min
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-flow">
+
+
+                <!-- COMMIT -->
+
+                <div
+                    class="stage completed"
+                    data-stage="0">
+
+                    <div class="stage-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Code Commit
+                    </strong>
+
+                    <span>
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- BUILD -->
+
+                <div
+                    class="stage completed"
+                    data-stage="1">
+
+                    <div class="stage-icon">
+                        ⚙
+                    </div>
+
+                    <strong>
+                        Build
+                    </strong>
+
+                    <span>
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- TEST -->
+
+                <div
+                    class="stage completed"
+                    data-stage="2">
+
+                    <div class="stage-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Unit Tests
+                    </strong>
+
+                    <span>
+                        124 passed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- SECURITY -->
+
+                <div
+                    class="stage completed"
+                    data-stage="3">
+
+                    <div class="stage-icon">
+                        🛡
+                    </div>
+
+                    <strong>
+                        Security
+                    </strong>
+
+                    <span>
+                        Passed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- RISK -->
+
+                <div
+                    class="stage completed"
+                    data-stage="4">
+
+                    <div class="stage-icon">
+                        ◉
+                    </div>
+
+                    <strong>
+                        Risk Check
+                    </strong>
+
+                    <span>
+                        Score 32
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- APPROVAL -->
+
+                <div
+                    class="stage pending"
+                    data-stage="5">
+
+                    <div class="stage-icon">
+                        !
+                    </div>
+
+                    <strong>
+                        Approval
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- DEPLOY -->
+
+                <div
+                    class="stage pending"
+                    data-stage="6">
+
+                    <div class="stage-icon">
+                        🚀
+                    </div>
+
+                    <strong>
+                        Deploy
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- PRODUCTION -->
+
+                <div
+                    class="stage pending"
+                    data-stage="7">
+
+                    <div class="stage-icon">
+                        ◈
+                    </div>
+
+                    <strong>
+                        Production
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOWER GRID -->
+
+        <div class="lower-grid">
+
+
+            <!-- LOGS -->
+
+            <div class="panel logs-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Build Logs
+                        </h2>
+
+                        <p>
+                            Latest pipeline execution
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="clear-button"
+                        id="clearLogs">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="terminal"
+                    id="terminal">
+
+                    <div>
+                        <span class="time">
+                            10:42:01
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Starting pipeline...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:03
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Installing dependencies...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:11
+                        </span>
+
+                        <span class="success">
+                            DONE
+                        </span>
+
+                        Dependencies installed.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:18
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Running build process...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:36
+                        </span>
+
+                        <span class="success">
+                            DONE
+                        </span>
+
+                        Build completed successfully.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:41
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Running 124 unit tests...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:54
+                        </span>
+
+                        <span class="success">
+                            PASS
+                        </span>
+
+                        124 tests passed.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:02
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Starting security scan...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:18
+                        </span>
+
+                        <span class="success">
+                            SAFE
+                        </span>
+
+                        No critical vulnerabilities.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:22
+                        </span>
+
+                        <span class="success">
+                            RISK
+                        </span>
+
+                        Deployment risk score: 32 LOW.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEST / SECURITY -->
+
+            <div class="right-column">
+
+
+                <div class="panel check-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2>
+                                Quality Checks
+                            </h2>
+
+                            <p>
+                                Pipeline validation
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-list">
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Unit Tests
+                                </strong>
+
+                                <span>
+                                    124 / 124 passed
+                                </span>
+
+                            </div>
+
+                            <b>
+                                100%
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Code Coverage
+                                </strong>
+
+                                <span>
+                                    Above required threshold
+                                </span>
+
+                            </div>
+
+                            <b>
+                                94%
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Security Scan
+                                </strong>
+
+                                <span>
+                                    No critical issues
+                                </span>
+
+                            </div>
+
+                            <b>
+                                SAFE
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon yellow">
+                                !
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Dependencies
+                                </strong>
+
+                                <span>
+                                    2 outdated packages
+                                </span>
+
+                            </div>
+
+                            <b class="warning-text">
+                                REVIEW
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RISK -->
+
+                <div class="panel pipeline-risk">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2>
+                                Deployment Risk
+                            </h2>
+
+                            <p>
+                                Final safety gate
+                            </p>
+
+                        </div>
+
+                        <span class="risk-badge">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="risk-score-row">
+
+                        <div class="risk-number">
+                            32
+                        </div>
+
+                        <div class="risk-bar">
+
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-message">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Safe to deploy
+                            </strong>
+
+                            <p>
+                                All critical quality gates have passed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT RUNS -->
+
+        <div class="panel runs-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Recent Pipeline Runs
+                    </h2>
+
+                    <p>
+                        Previous CI/CD executions
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View history →
+                </button>
+
+            </div>
+
+
+            <div class="runs-table">
+
+                <div class="runs-head">
+
+                    <span>RUN</span>
+                    <span>COMMIT</span>
+                    <span>BRANCH</span>
+                    <span>STATUS</span>
+                    <span>RISK</span>
+                    <span>DURATION</span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1048
+                    </strong>
+
+                    <span>
+                        8f3a2c1
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-low">
+                        LOW
+                    </b>
+
+                    <span>
+                        3m 21s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1047
+                    </strong>
+
+                    <span>
+                        72bd911
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-medium">
+                        MEDIUM
+                    </b>
+
+                    <span>
+                        4m 02s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1046
+                    </strong>
+
+                    <span>
+                        61aa442
+                    </span>
+
+                    <span>
+                        feature/auth
+                    </span>
+
+                    <b class="run-failed">
+                        ✕ Failed
+                    </b>
+
+                    <b class="run-high">
+                        HIGH
+                    </b>
+
+                    <span>
+                        2m 18s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1045
+                    </strong>
+
+                    <span>
+                        34c8d10
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-low">
+                        LOW
+                    </b>
+
+                    <span>
+                        3m 44s
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="pipeline.js"></script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | CI/CD Pipeline</title>
+
+    <link rel="stylesheet" href="pipeline.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+
+    <div class="workspace">
+
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+
+    </div>
+
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="index.html" class="nav-item active">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <span>🔔</span>
+            Alerts
+            <b>3</b>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+
+        </div>
+
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong>User</strong>
+                <small>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <span>CI/CD Pipeline</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    CONTINUOUS INTEGRATION & DEPLOYMENT
+                </div>
+
+                <h1>
+                    CI/CD Pipeline
+                </h1>
+
+                <p>
+                    Build, test, analyze and deploy your application safely.
+                </p>
+
+            </div>
+
+
+            <button
+                class="run-button"
+                id="runPipeline">
+
+                <span>▶</span>
+
+                Run Pipeline
+
+            </button>
+
+        </div>
+
+
+        <!-- PIPELINE HEADER -->
+
+        <div class="pipeline-header panel">
+
+            <div class="pipeline-project">
+
+                <div class="project-logo">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        API Service
+                    </strong>
+
+                    <span>
+                        company/api-service
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-meta">
+
+                <div>
+                    <span>BRANCH</span>
+                    <strong>⎇ main</strong>
+                </div>
+
+                <div>
+                    <span>COMMIT</span>
+                    <strong>8f3a2c1</strong>
+                </div>
+
+                <div>
+                    <span>AUTHOR</span>
+                    <strong>Developer</strong>
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong id="pipelineStatus">
+                        Pipeline Ready
+                    </strong>
+
+                    <small>
+                        Last run 8 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PIPELINE FLOW -->
+
+        <div class="panel pipeline-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Deployment Pipeline
+                    </h2>
+
+                    <p>
+                        Automated deployment workflow
+                    </p>
+
+                </div>
+
+                <span class="pipeline-time">
+                    ~ 4 min
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-flow">
+
+
+                <!-- COMMIT -->
+
+                <div
+                    class="stage completed"
+                    data-stage="0">
+
+                    <div class="stage-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Code Commit
+                    </strong>
+
+                    <span>
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- BUILD -->
+
+                <div
+                    class="stage completed"
+                    data-stage="1">
+
+                    <div class="stage-icon">
+                        ⚙
+                    </div>
+
+                    <strong>
+                        Build
+                    </strong>
+
+                    <span>
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- TEST -->
+
+                <div
+                    class="stage completed"
+                    data-stage="2">
+
+                    <div class="stage-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Unit Tests
+                    </strong>
+
+                    <span>
+                        124 passed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- SECURITY -->
+
+                <div
+                    class="stage completed"
+                    data-stage="3">
+
+                    <div class="stage-icon">
+                        🛡
+                    </div>
+
+                    <strong>
+                        Security
+                    </strong>
+
+                    <span>
+                        Passed
+                    </span>
+
+                </div>
+
+
+                <div class="connector completed-connector"></div>
+
+
+                <!-- RISK -->
+
+                <div
+                    class="stage completed"
+                    data-stage="4">
+
+                    <div class="stage-icon">
+                        ◉
+                    </div>
+
+                    <strong>
+                        Risk Check
+                    </strong>
+
+                    <span>
+                        Score 32
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- APPROVAL -->
+
+                <div
+                    class="stage pending"
+                    data-stage="5">
+
+                    <div class="stage-icon">
+                        !
+                    </div>
+
+                    <strong>
+                        Approval
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- DEPLOY -->
+
+                <div
+                    class="stage pending"
+                    data-stage="6">
+
+                    <div class="stage-icon">
+                        🚀
+                    </div>
+
+                    <strong>
+                        Deploy
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <!-- PRODUCTION -->
+
+                <div
+                    class="stage pending"
+                    data-stage="7">
+
+                    <div class="stage-icon">
+                        ◈
+                    </div>
+
+                    <strong>
+                        Production
+                    </strong>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOWER GRID -->
+
+        <div class="lower-grid">
+
+
+            <!-- LOGS -->
+
+            <div class="panel logs-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h2>
+                            Build Logs
+                        </h2>
+
+                        <p>
+                            Latest pipeline execution
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="clear-button"
+                        id="clearLogs">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="terminal"
+                    id="terminal">
+
+                    <div>
+                        <span class="time">
+                            10:42:01
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Starting pipeline...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:03
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Installing dependencies...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:11
+                        </span>
+
+                        <span class="success">
+                            DONE
+                        </span>
+
+                        Dependencies installed.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:18
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Running build process...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:36
+                        </span>
+
+                        <span class="success">
+                            DONE
+                        </span>
+
+                        Build completed successfully.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:41
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Running 124 unit tests...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:42:54
+                        </span>
+
+                        <span class="success">
+                            PASS
+                        </span>
+
+                        124 tests passed.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:02
+                        </span>
+
+                        <span class="info">
+                            INFO
+                        </span>
+
+                        Starting security scan...
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:18
+                        </span>
+
+                        <span class="success">
+                            SAFE
+                        </span>
+
+                        No critical vulnerabilities.
+                    </div>
+
+
+                    <div>
+                        <span class="time">
+                            10:43:22
+                        </span>
+
+                        <span class="success">
+                            RISK
+                        </span>
+
+                        Deployment risk score: 32 LOW.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEST / SECURITY -->
+
+            <div class="right-column">
+
+
+                <div class="panel check-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2>
+                                Quality Checks
+                            </h2>
+
+                            <p>
+                                Pipeline validation
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="check-list">
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Unit Tests
+                                </strong>
+
+                                <span>
+                                    124 / 124 passed
+                                </span>
+
+                            </div>
+
+                            <b>
+                                100%
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Code Coverage
+                                </strong>
+
+                                <span>
+                                    Above required threshold
+                                </span>
+
+                            </div>
+
+                            <b>
+                                94%
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Security Scan
+                                </strong>
+
+                                <span>
+                                    No critical issues
+                                </span>
+
+                            </div>
+
+                            <b>
+                                SAFE
+                            </b>
+
+                        </div>
+
+
+                        <div class="check-row">
+
+                            <div class="check-icon yellow">
+                                !
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Dependencies
+                                </strong>
+
+                                <span>
+                                    2 outdated packages
+                                </span>
+
+                            </div>
+
+                            <b class="warning-text">
+                                REVIEW
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RISK -->
+
+                <div class="panel pipeline-risk">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2>
+                                Deployment Risk
+                            </h2>
+
+                            <p>
+                                Final safety gate
+                            </p>
+
+                        </div>
+
+                        <span class="risk-badge">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="risk-score-row">
+
+                        <div class="risk-number">
+                            32
+                        </div>
+
+                        <div class="risk-bar">
+
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-message">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Safe to deploy
+                            </strong>
+
+                            <p>
+                                All critical quality gates have passed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT RUNS -->
+
+        <div class="panel runs-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Recent Pipeline Runs
+                    </h2>
+
+                    <p>
+                        Previous CI/CD executions
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View history →
+                </button>
+
+            </div>
+
+
+            <div class="runs-table">
+
+                <div class="runs-head">
+
+                    <span>RUN</span>
+                    <span>COMMIT</span>
+                    <span>BRANCH</span>
+                    <span>STATUS</span>
+                    <span>RISK</span>
+                    <span>DURATION</span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1048
+                    </strong>
+
+                    <span>
+                        8f3a2c1
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-low">
+                        LOW
+                    </b>
+
+                    <span>
+                        3m 21s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1047
+                    </strong>
+
+                    <span>
+                        72bd911
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-medium">
+                        MEDIUM
+                    </b>
+
+                    <span>
+                        4m 02s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1046
+                    </strong>
+
+                    <span>
+                        61aa442
+                    </span>
+
+                    <span>
+                        feature/auth
+                    </span>
+
+                    <b class="run-failed">
+                        ✕ Failed
+                    </b>
+
+                    <b class="run-high">
+                        HIGH
+                    </b>
+
+                    <span>
+                        2m 18s
+                    </span>
+
+                </div>
+
+
+                <div class="run-row">
+
+                    <strong>
+                        #1045
+                    </strong>
+
+                    <span>
+                        34c8d10
+                    </span>
+
+                    <span>
+                        main
+                    </span>
+
+                    <b class="run-success">
+                        ✓ Success
+                    </b>
+
+                    <b class="run-low">
+                        LOW
+                    </b>
+
+                    <span>
+                        3m 44s
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="pipeline.js"></script>
+
+</body>
+</html>
