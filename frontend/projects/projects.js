@@ -1,3 +1,4 @@
+const API_URL = "http://localhost:5000/api";
 const searchInput =
     document.getElementById("searchInput");
 
@@ -359,10 +360,48 @@ document.addEventListener(
         }
 
 
-        console.log(
-            "Selected project:",
-            card.dataset.name
-        );
+        const projectName =
+    card.dataset.name;
+
+window.location.href =
+    `../project-details/index.html?project=${encodeURIComponent(projectName)}`;
 
     }
 );
+async function loadProjectsFromDatabase() {
+    const token = localStorage.getItem("devguardToken");
+
+    if (!token) {
+        window.location.href = "../login/index.html";
+        return;
+    }
+
+    try {
+        const response = await fetch(
+            `${API_URL}/projects`,
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                data.message || "Failed to load projects"
+            );
+        }
+
+        console.log("Projects from MySQL:", data.projects);
+
+    } catch (error) {
+        console.error(
+            "Project loading error:",
+            error
+        );
+    }
+}
+loadProjectsFromDatabase();

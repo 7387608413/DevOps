@@ -1,13 +1,16 @@
-CREATE DATABASE IF NOT EXISTS devguard;
-
-USE devguard;
-
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100),
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    role VARCHAR(50) DEFAULT 'Developer',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    name VARCHAR(150) NOT NULL,
+    description TEXT,
+    repository VARCHAR(255),
+    branch VARCHAR(100) DEFAULT 'main',
+    status VARCHAR(50) DEFAULT 'Active',
+    risk_score INT DEFAULT 0,
+    owner_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_project_owner
+        FOREIGN KEY (owner_id)
+        REFERENCES users(id)
+        ON DELETE SET NULL
 );

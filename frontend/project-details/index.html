@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevGuard | Project Details</title>
+
+    <link rel="stylesheet" href="project-details.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+</div>
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">D</div>
+
+        <div>
+            <h2>DevGuard</h2>
+            <span>DEVOPS INTELLIGENCE</span>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <div class="workspace-icon">P</div>
+
+        <div>
+            <strong>Production</strong>
+            <small>Workspace</small>
+        </div>
+
+        <span class="workspace-arrow">⌄</span>
+    </div>
+
+    <nav>
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/index.html" class="nav-item">
+            <span>⌂</span>
+            Overview
+        </a>
+
+        <a href="../projects/index.html" class="nav-item active">
+            <span>▣</span>
+            Projects
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>🚀</span>
+            Deployments
+        </a>
+
+        <a href="../risk-analysis/index.html" class="nav-item">
+            <span>◉</span>
+            Risk Analysis
+        </a>
+
+        <p class="nav-title">DEVOPS</p>
+
+        <a href="../pipeline/index.html" class="nav-item">
+            <span>⚡</span>
+            CI/CD Pipeline
+        </a>
+
+        <a href="../monitoring/index.html" class="nav-item">
+            <span>◌</span>
+            Monitoring
+        </a>
+
+        <a href="../deployments/index.html" class="nav-item">
+            <span>◷</span>
+            Deployment History
+        </a>
+
+        <p class="nav-title">SYSTEM</p>
+
+        <a href="../alerts/index.html" class="nav-item">
+            <span>🔔</span>
+            Alerts
+        </a>
+
+        <a href="../settings/index.html" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+            <span class="online-dot"></span>
+
+            <div>
+                <strong>All systems operational</strong>
+                <small>Last checked just now</small>
+            </div>
+        </div>
+
+        <div class="user">
+
+            <div class="avatar">U</div>
+
+            <div>
+                <strong data-user-name>User</strong>
+                <small data-user-role>Developer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button id="menuButton">☰</button>
+
+            <a href="../projects/index.html" class="back-button">
+                ← Projects
+            </a>
+
+        </div>
+
+        <div class="top-actions">
+
+            <div class="search">
+                ⌕
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+            </div>
+
+            <button class="notification">
+                🔔
+                <i></i>
+            </button>
+
+            <div class="top-avatar">
+                U
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="content">
+
+        <div class="breadcrumb">
+            Projects / <span id="breadcrumbProject">
+                Project Details
+            </span>
+        </div>
+
+
+        <div class="project-heading">
+
+            <div class="project-identity">
+
+                <div
+                    class="project-logo"
+                    id="projectLogo">
+                    P
+                </div>
+
+                <div>
+
+                    <div class="label">
+                        PROJECT
+                    </div>
+
+                    <h1 id="projectName">
+                        Project Details
+                    </h1>
+
+                    <p id="projectDescription">
+                        DevOps project
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="heading-actions">
+
+                <button
+                    class="secondary-button"
+                    id="repositoryButton">
+                    ⌘ Repository
+                </button>
+
+                <button
+                    class="primary-button"
+                    id="deployButton">
+                    🚀 Deploy
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-row">
+
+            <span class="status-badge">
+                <i></i>
+                <span id="projectStatus">
+                    Healthy
+                </span>
+            </span>
+
+            <span class="branch">
+                ⎇ <span id="projectBranch">
+                    main
+                </span>
+            </span>
+
+            <span class="updated">
+                Updated just now
+            </span>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>RISK SCORE</span>
+
+                <strong id="riskScore">
+                    24
+                </strong>
+
+                <small class="low">
+                    LOW RISK
+                </small>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>BUILD STATUS</span>
+
+                <strong class="success">
+                    ✓
+                </strong>
+
+                <small>
+                    BUILD PASSED
+                </small>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>DEPLOYMENTS</span>
+
+                <strong>
+                    24
+                </strong>
+
+                <small>
+                    THIS MONTH
+                </small>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>UPTIME</span>
+
+                <strong>
+                    99.9%
+                </strong>
+
+                <small class="success-text">
+                    OPERATIONAL
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-grid">
+
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            DEVELOPMENT
+                        </span>
+
+                        <h2>Repository</h2>
+                    </div>
+
+                    <span class="live">
+                        ● Connected
+                    </span>
+
+                </div>
+
+
+                <div class="repo-box">
+
+                    <div class="repo-icon">
+                        G
+                    </div>
+
+                    <div>
+
+                        <strong id="repository">
+                            company/project
+                        </strong>
+
+                        <small>
+                            GitHub repository
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-list">
+
+                    <div>
+                        <span>Default branch</span>
+                        <strong id="detailBranch">
+                            main
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Last commit</span>
+                        <strong>
+                            a83f21c
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Commit message</span>
+                        <strong>
+                            Update production configuration
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            CI/CD
+                        </span>
+
+                        <h2>Pipeline</h2>
+                    </div>
+
+                    <span class="success-text">
+                        ✓ Passed
+                    </span>
+
+                </div>
+
+
+                <div class="pipeline">
+
+                    <div class="pipeline-step done">
+                        <span>✓</span>
+                        <strong>Code</strong>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="pipeline-step done">
+                        <span>✓</span>
+                        <strong>Build</strong>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="pipeline-step done">
+                        <span>✓</span>
+                        <strong>Test</strong>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="pipeline-step active-step">
+                        <span>●</span>
+                        <strong>Deploy</strong>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="full-button"
+                    onclick="openPipeline()">
+
+                    View CI/CD Pipeline →
+
+                </button>
+
+            </section>
+
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            SECURITY
+                        </span>
+
+                        <h2>Risk Analysis</h2>
+                    </div>
+
+                    <span class="risk-low">
+                        LOW
+                    </span>
+
+                </div>
+
+
+                <div class="risk-score">
+
+                    <div
+                        class="score-circle"
+                        id="scoreCircle">
+
+                        <strong id="largeRiskScore">
+                            24
+                        </strong>
+
+                        <small>/ 100</small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Low Risk
+                        </strong>
+
+                        <p>
+                            No critical vulnerabilities detected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="full-button"
+                    onclick="openRiskAnalysis()">
+
+                    View Risk Analysis →
+
+                </button>
+
+            </section>
+
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            OPERATIONS
+                        </span>
+
+                        <h2>Recent Deployments</h2>
+                    </div>
+
+                    <span>
+                        Last 24h
+                    </span>
+
+                </div>
+
+
+                <div class="deployment">
+
+                    <div class="deployment-icon success">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Production
+                        </strong>
+
+                        <small>
+                            8 minutes ago
+                        </small>
+                    </div>
+
+                    <span class="deployment-success">
+                        Successful
+                    </span>
+
+                </div>
+
+
+                <div class="deployment">
+
+                    <div class="deployment-icon success">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Staging
+                        </strong>
+
+                        <small>
+                            2 hours ago
+                        </small>
+                    </div>
+
+                    <span class="deployment-success">
+                        Successful
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="full-button"
+                    onclick="openDeployments()">
+
+                    View Deployment History →
+
+                </button>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div class="toast" id="toast">
+
+    <span>✓</span>
+
+    <div>
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <small id="toastMessage">
+            Action completed.
+        </small>
+    </div>
+
+</div>
+
+
+<script src="../auth.js"></script>
+<script src="project-details.js"></script>
+
+</body>
+</html>
